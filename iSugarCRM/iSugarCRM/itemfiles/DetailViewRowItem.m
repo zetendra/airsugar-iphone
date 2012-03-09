@@ -103,7 +103,8 @@
             NSDate *date = [dateFormatter dateFromString:dateString];
             NSLog(@"date object from string is %@",date);
             [dateFormatter setDateFormat:@"dd-MMM-yyyy"];
-            dateString = [dateFormatter stringFromDate:date];
+            if (date != nil)
+                dateString = [dateFormatter stringFromDate:date];
             
             textLabel.text = dateString;
             UIButton *button = (UIButton*)[cell.contentView viewWithTag:1002];

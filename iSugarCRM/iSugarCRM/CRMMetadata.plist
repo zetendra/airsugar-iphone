@@ -404,7 +404,7 @@
 									<key>type</key>
 									<string>0</string>
 									<key>name</key>
-									<string>email</string>
+									<string>email1</string>
 								</dict>
 							</array>
 							<key>label</key>
@@ -1387,6 +1387,27 @@
 							</array>
 							<key>label</key>
 							<string>Name</string>
+						</dict>
+						<dict>
+							<key>fields</key>
+							<array>
+								<dict>
+									<key>action</key>
+									<string></string>
+									<key>editable</key>
+									<false/>
+									<key>filterable</key>
+									<false/>
+									<key>sortable</key>
+									<false/>
+									<key>type</key>
+									<string>0</string>
+									<key>name</key>
+									<string>account_name</string>
+								</dict>
+							</array>
+							<key>label</key>
+							<string>Account Name</string>
 						</dict>
 						<dict>
 							<key>fields</key>
@@ -4043,7 +4064,7 @@
 									<key>type</key>
 									<string>0</string>
 									<key>name</key>
-									<string>email</string>
+									<string>email1</string>
 								</dict>
 							</array>
 							<key>label</key>
@@ -6580,7 +6601,7 @@
 									<key>type</key>
 									<string>email</string>
 									<key>name</key>
-									<string>email</string>
+									<string>email1</string>
 								</dict>
 							</array>
 							<key>label</key>
@@ -10639,6 +10660,8 @@
 				<string>name_value_list.description.value</string>
 				<key>assigned_user_id</key>
 				<string>name_value_list.assigned_user_id.value</string>
+				<key>assigned_user_name</key>
+				<string>name_value_list.assigned_user_name.value</string>
 				<key>location</key>
 				<string>name_value_list.location.value</string>
 				<key>deleted</key>

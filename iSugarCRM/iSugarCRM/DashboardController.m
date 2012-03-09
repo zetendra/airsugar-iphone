@@ -60,15 +60,27 @@
 {
     [super viewDidLoad];  
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    loadingLabel = [[UILabel alloc]initWithFrame:CGRectMake(40,self.view.frame.size.width/2-50,250,50)];
+    loadingLabel = [[UILabel alloc] init];
     loadingLabel.text = @"Please wait loading data...";
     loadingLabel.textAlignment = UITextAlignmentCenter;
-    [self.view addSubview:loadingLabel];
-    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    spinner.frame = CGRectMake(self.view.frame.size.width/2-10, self.view.frame.size.height/2-10, 20, 20);
     loadingLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
+    [self.view addSubview:loadingLabel];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     [self.view addSubview:spinner];
+    
+    UIInterfaceOrientation orientation =
+    [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationLandscapeLeft ||
+        orientation == UIInterfaceOrientationLandscapeRight)
+    {
+        loadingLabel.frame = CGRectMake(self.view.frame.size.width/8-10,self.view.frame.size.height/2-60,250,50);
+        spinner.frame = CGRectMake(self.view.frame.size.width/2-15, self.view.frame.size.height/2+20, 20, 20);
+    }else{
+        loadingLabel.frame = CGRectMake(self.view.frame.size.width/8,self.view.frame.size.height/2-50,250,50);
+        spinner.frame = CGRectMake(self.view.frame.size.width/2-10, self.view.frame.size.height/2-10, 20, 20);
+    }
     [spinner startAnimating];
     [self clearSavedLauncherItems];
 }
